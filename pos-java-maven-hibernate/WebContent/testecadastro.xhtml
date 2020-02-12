@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+<link rel="stylesheet" type="text/css" href="resources/NewFile.css"/>
+</h:head>
+
+<h:body id= "fundoCadastro">
+
+
+	<p:growl id="growl" sticky="true" showDetail="true" />
+
+	<p:layout style="min-width:900px;min-height:900px;" id="layout">
+		<p:layoutUnit position="north" resizable="true" size="15" minSize="40"
+			maxSize="200" >
+
+
+		</p:layoutUnit>
+
+
+		<p:layoutUnit position="center" visible="true">
+			<p:panel header="Cadastro de Funcionários com Primefaces - Somente o front-end" id="panel"
+				style="width:75%;left: 5%">
+				<h:panelGrid border="0" style="text-align:left; width:100%">
+					<h:form>
+						<p:tabView>
+							<p:tab title="Identificação">
+
+								<p:panelGrid columns="4" layout="tabular"
+									columnClasses="p-col-12 p-md-3 p-xl-2, p-col-12 p-md-9 p-xl-4, p-col-12 p-md-3 p-xl-2, p-col-12 p-md-9 p-xl-4"
+									contentStyleClass="p-align-baseline ui-fluid">
+
+									<p:outputLabel for="name" value="Nome:"
+										style="font-weight:bold" placeholder="*Obrigatório"/>
+									<p:inputText id="name" placeholder="*Obrigatório"/>
+
+									<p:outputLabel for="cpf" value="CPF:" style="font-weight:bold" />
+									<p:inputMask id="cpf" mask="99.999.999-99" placeholder="*Obrigatório"/>
+
+									<p:outputLabel for="telefone" value="Telefone:"
+										style="font-weight:bold" />
+									<p:inputMask id="telefone" mask="99-9999-9999" />
+
+
+									<p:outputLabel for="cpf" value="Data Nascimento:" style="font-weight:bold" />
+									
+									
+            
+        <p:calendar id="button" value="" showOn="button" />
+
+								</p:panelGrid>
+
+
+
+							</p:tab>
+						</p:tabView>
+
+						<p:tabView>
+							<p:tab title="Vinculo/Cargo">
+
+								<p:panelGrid columns="4" layout="tabular"
+									columnClasses="p-col-12 p-md-3 p-xl-2, p-col-12 p-md-9 p-xl-4, p-col-12 p-md-3 p-xl-2, p-col-12 p-md-9 p-xl-4"
+									contentStyleClass="p-align-baseline ui-fluid">
+
+									<p:outputLabel for="seldep" value="Departamento"
+										style="font-weight:bold" />
+									<p:selectOneMenu id="seldep">
+										<f:selectItem itemLabel="Selecione" itemValue="" />
+										<f:selectItem itemLabel="RH" itemValue="RH" />
+										<f:selectItem itemLabel="TI" itemValue="TI" />
+										<f:selectItem itemLabel="Financeiro" itemValue="Financeiro" />
+									</p:selectOneMenu>
+
+									<p:outputLabel for="selcar" value="Cargo"
+										style="font-weight:bold" />
+									<p:selectOneMenu id="selcar">
+										<f:selectItem itemLabel="Selecione" itemValue="" />
+										<f:selectItem itemLabel="Suporte" itemValue="Suporte" />
+										<f:selectItem itemLabel="Operador" itemValue="Operador" />
+										<f:selectItem itemLabel="Vendedor" itemValue="Vendedor" />
+									</p:selectOneMenu>
+
+								</p:panelGrid>
+
+							</p:tab>
+						</p:tabView>
+
+						<p:tabView>
+							<p:tab title="Informações de Contrato">
+
+								<p:panelGrid columns="4" layout="tabular"
+									columnClasses="p-col-12 p-md-3 p-xl-2, p-col-12 p-md-9 p-xl-4, p-col-12 p-md-3 p-xl-2, p-col-12 p-md-9 p-xl-4"
+									contentStyleClass="p-align-baseline ui-fluid">
+
+									<p:outputLabel for="checkboxA" value="Contrato de Experiencia" style="font-weight:bold" />
+									<p:selectBooleanCheckbox id="checkboxA" itemLabel="Sim" />
+									<p:selectBooleanCheckbox id="checkboxB" itemLabel="Nao" />
+								</p:panelGrid>
+								
+
+							</p:tab>
+						</p:tabView>
+
+						<p:tabView>
+							<p:tab title="Informaçoes Adicionais">
+
+								<p:panelGrid columns="4" layout="tabular"
+									columnClasses="p-col-12 p-md-3 p-xl-2, p-col-12 p-md-12 p-xl-6, p-col-12 p-md-3 p-xl-2, p-col-12 p-md-12 p-xl-6"
+									contentStyleClass="p-align-baseline ui-fluid">
+
+									<p:outputLabel for="end" value="Endereço:"
+										style="font-weight:bold" />
+									<p:inputText id="end" placeholder="*Obrigatório"/>
+
+									<p:outputLabel for="bairro" value="Bairro:"
+										style="font-weight:bold" />
+									<p:inputText id="bairro" placeholder="*Obrigatório"/>
+
+									<p:outputLabel for="cidade" value="Cidade:"
+										style="font-weight:bold" />
+									<p:inputMask id="cidade" placeholder="*Obrigatório"/>
+									
+									
+			<p:outputLabel value="UF:" style="font-weight:bold" />
+			<p:selectOneMenu id="trl" value="" style="width:150px">
+            <f:selectItem itemLabel="Selecione" itemValue="" />
+            <f:selectItem itemLabel="Acre" itemValue="Acre" />
+            <f:selectItem itemLabel="Alagoas" itemValue="Alagoas" />
+            <f:selectItem itemLabel="Amapá" itemValue="Amapá" />
+            <f:selectItem itemLabel="Amazonas" itemValue="Amazonas" />
+            <f:selectItem itemLabel="Bahia" itemValue="Bahia" />
+            <f:selectItem itemLabel="Ceará" itemValue="Ceará" />
+            <f:selectItem itemLabel="Distrito Federal" itemValue="Distrito Federal" />
+            <f:selectItem itemLabel="Espírito Santo" itemValue="Espírito Santo" />
+            <f:selectItem itemLabel="Goiás" itemValue="Goiás" />
+            <f:selectItem itemLabel="Maranhão" itemValue="Maranhão" />
+            <f:selectItem itemLabel="Mato Grosso" itemValue="Mato Grosso" />
+            <f:selectItem itemLabel="Mato Grosso do Sul" itemValue="Mato Grosso do Sul" />
+            <f:selectItem itemLabel="Minas Gerais" itemValue="Minas Gerais" />
+            <f:selectItem itemLabel="Pará" itemValue="Pará" />
+            <f:selectItem itemLabel="Paraíba" itemValue="Paraíba" />
+            <f:selectItem itemLabel="Paraná" itemValue="Paraná" />
+            <f:selectItem itemLabel="Pernambuco" itemValue="Pernambuco" />
+            <f:selectItem itemLabel="Piauí" itemValue="Piauí" />
+            <f:selectItem itemLabel="Rio de Janeiro" itemValue="Rio de Janeiro" />
+            <f:selectItem itemLabel="Rio Grande do Norte" itemValue="Rio Grande do Norte" />
+            <f:selectItem itemLabel="Rio Grande do Sul" itemValue="Rio Grande do Sul" />
+            <f:selectItem itemLabel="Rondônia" itemValue="Rondônia" />
+            <f:selectItem itemLabel="Roraima" itemValue="Roraima" />
+            <f:selectItem itemLabel="Santa Catarina" itemValue="Santa Catarina" />
+            <f:selectItem itemLabel="São Paulo" itemValue="São Paulo" />
+            <f:selectItem itemLabel="Sergipe" itemValue="Sergipe" />
+            <f:selectItem itemLabel="Tocantins" itemValue="Tocantins" />
+            
+        </p:selectOneMenu>
+
+
+
+								</p:panelGrid>
+
+							</p:tab>
+						</p:tabView>
+
+
+					</h:form>
+					<p:button onclick="" value="Salvar" />
+
+				</h:panelGrid>
+			</p:panel>
+		</p:layoutUnit>
+
+	</p:layout>
+</h:body>
+
+</html>
